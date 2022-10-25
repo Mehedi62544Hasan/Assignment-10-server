@@ -15,6 +15,12 @@ app.get("/courses", (req, res) =>{
     res.send(allSubject);
 });
 
+app.get("/courses/:id", (req, res) =>{
+    const id = (req.params.id)
+    const getSubject = allSubject.find(p => p.id == id);
+    res.send(getSubject);
+});
+
 
 app.listen(Port, () => {
     console.log("server is running", Port);
