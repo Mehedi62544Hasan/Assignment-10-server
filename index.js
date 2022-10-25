@@ -5,9 +5,15 @@ app.use(cors());
 
 const Port = process.env.Port || 5000;
 
+const allSubject = require("./data/learning.json")
+
 app.get("/", (req, res) =>{
-    res.send("new server is running")
-})
+    res.send("new server is running");
+});
+
+app.get("/courses", (req, res) =>{
+    res.send(allSubject);
+});
 
 
 app.listen(Port, () => {
